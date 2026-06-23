@@ -25,3 +25,5 @@ tauri = { version = "2.11.2", features = [] }
 tauri-plugin-log = "2"
 base64 = "0.22.1"
 tauri-plugin-process = "2.3.1"
+anyhow = "1.0.102"
+rodio = "0.19"
