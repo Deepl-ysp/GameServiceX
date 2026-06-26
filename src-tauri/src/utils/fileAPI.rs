@@ -20,7 +20,6 @@ pub fn readFile(app: &tauri::AppHandle, resPath: &str) -> GsResult<FileObject> {
         .resolve(resPath, BaseDirectory::Resource)
         .context(format!("解析 Resource 路径失败: {}", resPath))?;
 
-
     if !real_path.exists() {
         log::error!("【readFile】文件不存在: {:?}", real_path);
         return Err(anyhow::anyhow!("资源文件不存在: {}", resPath));

@@ -1,6 +1,6 @@
 // src-tauri/src/cmd/image.rs
 use std::path::PathBuf;
-use crate::utils::fileAPI::{FileObject, readFile};
+use crate::utils::fileAPI::readFile;
 use crate::utils::ToTauriError;
 use base64::{engine::general_purpose::STANDARD, Engine as _};
 use tauri::AppHandle;
@@ -17,10 +17,10 @@ pub struct ImageObject {
 #[tauri::command]
 pub fn readImage(app: AppHandle, resPath: String) -> Result<ImageObject, String> {
 
-    let fileObject: FileObject = readFile(&app, &resPath)
+    let fileObject = readFile(&app, &resPath)
         .map_err(|e| e.to_tauri_error())?;
 
-    let baseString: String = STANDARD.encode(&fileObject.data);
+    let baseString = STANDARD.encode(&fileObject.data);
 
     Ok(ImageObject {
         name: fileObject.name,

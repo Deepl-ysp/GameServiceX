@@ -46,8 +46,9 @@
     },
     "resources":[
       "./user",
+      "./level",
       "./image",
-      "./level"
+      "./audio"
     ],
     "active": true,
     "targets": "all",

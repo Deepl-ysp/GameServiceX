@@ -38,6 +38,12 @@ export default defineConfig({
       "@styles": path.resolve(__dirname, "./src/styles"),
     },
   },
-  plugins: [vue()],
+  plugins: [vue({
+    template:{
+      compilerOptions:{
+        isCustomElement: (tag) => ['lc', 'sc', 'imt'].includes(tag)
+      }
+    }
+  })],
   envPrefix: "GS",
 });

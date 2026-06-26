@@ -2,6 +2,9 @@
 /node_modules
 /src-tauri/target
 /src-tauri/image
+/src-tauri/audio
+**/*.ogg
 **/*.zip
 **/*.log
 error.txt
+test.json
